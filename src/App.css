@@ -21,6 +21,7 @@ p{
     grid-template-rows: 100px 100px 100px;
     cursor: pointer;
     position: relative;
+    padding-top: 10px;
 }
 .tile{
     color: currentColor;

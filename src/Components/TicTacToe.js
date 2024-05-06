@@ -170,7 +170,7 @@ function TicTacToe() {
   return (
     <div>
       <h1>Tic-Tac-Toe</h1>
-      <p>Player {currentPlayer} turns</p>
+      {gameState===GameState.inProgress&&<p>Player {currentPlayer} turns</p>}
       <Board 
         playerTurn={playerTurn}
         tiles={tiles}
