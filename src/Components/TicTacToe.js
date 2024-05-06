@@ -57,6 +57,9 @@ function TicTacToe() {
     // State to control the confetti animation
   const [playConfetti, setPlayConfetti] = useState(false);
 
+  // State for whose turn it is
+  const [currentPlayer, setCurrentPlayer] = useState(PLAYER_X);
+
   let confettiTimeout;
 
     //create a use effect to get winner
@@ -122,7 +125,10 @@ function TicTacToe() {
       }
     },[gameState])
 
-    
+    useEffect(()=>{
+      setCurrentPlayer(playerTurn);
+
+    },[playerTurn])
 
     useEffect(() => {
       // When a player wins, trigger the confetti animation
@@ -154,6 +160,9 @@ function TicTacToe() {
           setPlayerTurn(PLAYER_X)
         }
 
+        // Update current player
+  setCurrentPlayer(currentPlayer === PLAYER_X ? PLAYER_O:PLAYER_X);
+
 
 
     };
@@ -161,6 +170,7 @@ function TicTacToe() {
   return (
     <div>
       <h1>Tic-Tac-Toe</h1>
+      <p>Player {currentPlayer} turns</p>
       <Board 
         playerTurn={playerTurn}
         tiles={tiles}
@@ -169,8 +179,9 @@ function TicTacToe() {
       >
 
       </Board>
+      
       <GamePver gameState={gameState}></GamePver>
-      <Reset gameState={gameState} onReset={handleReset}></Reset>
+      <div className='res'><Reset gameState={gameState} onReset={handleReset}></Reset></div>
       <ConfettiAnimation play={playConfetti} ></ConfettiAnimation>
     </div>
   )

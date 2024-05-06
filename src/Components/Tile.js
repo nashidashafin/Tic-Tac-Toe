@@ -1,6 +1,14 @@
 import React from 'react'
 
 function Tile({className,value, onClick, playerTurn}) {
+  let symbolClass = null;
+
+   // Determine class based on value
+   if (value === 'X') {
+    symbolClass = 'x-symbol';
+  } else if (value === 'O') {
+    symbolClass = 'o-symbol';
+  }
 
   let hoverClass = null ;
   if(value == null && playerTurn != null){
@@ -9,7 +17,7 @@ function Tile({className,value, onClick, playerTurn}) {
 
   return (
     <div onClick={onClick} className={`tile ${className} ${hoverClass} `}>
-      {value}
+    <span className={symbolClass}>{value}</span>  
     </div>
   )
 }

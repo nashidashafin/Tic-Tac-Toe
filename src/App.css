@@ -9,6 +9,11 @@ body{
 h1{
     text-align: center;
 }
+p{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
 .board{
     display: grid;
@@ -105,15 +110,27 @@ h1{
     border: #5468ff 8px;
     /* border-style: dotted; */
     padding: 10px;
-    margin-top: 50px;
+    margin-top: 20px;
     font-size: 1.5em;
 }
 
 .reset-button{
-    margin-top: 50px;
-    padding: 18px;
+    margin-top: 20px;
+    padding: 15px;
     background-color: #0074a6;
     color: white;
-    width: 100%;
+    /* width: 100%; */
     font-size: 1.2rem;
+    border: 0;
+}
+
+.x-symbol {
+  color: #CCCCCC; /* Change X color here */
+}
+
+.o-symbol {
+  color: #ADD8E6; /* Change O color here */
+}
+.res{
+    text-align: center;
 }
